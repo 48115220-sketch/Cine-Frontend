@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #000000;
+  border-bottom: 1px solid #222;
+}
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: #e50914;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+nav { display: flex; align-items: center; gap: 20px; }
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: color 0.2s;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+nav a:hover, nav a.active { color: #fff; background: #1a1a1a; }
+nav a.direct-seats-link { border: 1px solid #e50914; color: #e50914; }
+nav a.direct-seats-link:hover { background: #e50914; color: #fff; }
+.main-content { padding: 30px 20px; }

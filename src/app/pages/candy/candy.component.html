@@ -1,0 +1,36 @@
+<div class="candy-container">
+  <div class="candy-header">
+    <h1>CANDY & CONFITERÍA</h1>
+    <p>Acompañá tu película con los mejores snacks y promos exclusivas del cine.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button [class.active]="categoriaSeleccionada === 'TODOS'" (click)="categoriaSeleccionada = 'TODOS'">Todos</button>
+    <button [class.active]="categoriaSeleccionada === 'COMBO'" (click)="categoriaSeleccionada = 'COMBO'">Combos</button>
+    <button [class.active]="categoriaSeleccionada === 'COMIDA'" (click)="categoriaSeleccionada = 'COMIDA'">Pochoclos & Comida</button>
+    <button [class.active]="categoriaSeleccionada === 'BEBIDA'" (click)="categoriaSeleccionada = 'BEBIDA'">Bebidas</button>
+    <button [class.active]="categoriaSeleccionada === 'MERCHANDISING'" (click)="categoriaSeleccionada = 'MERCHANDISING'">Coleccionables</button>
+  </div>
+
+  <div class="candy-grid">
+    <div class="candy-card" *ngFor="let p of productosFiltrados">
+      <div class="candy-icon">{{ p.imagen || '🍿' }}</div>
+      <div class="candy-info">
+        <h3>{{ p.nombre }}</h3>
+        <p class="desc">{{ p.descripcion }}</p>
+        <div class="price-bar">
+          <span class="price">${{ p.precio }}</span>
+          <button class="btn-add" (click)="agregarAlCarrito(p)">+ Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-floating" *ngIf="carrito.length > 0">
+    <div class="cart-summary">
+      <span>🛒 {{ carrito.length }} items seleccionados</span>
+      <strong>Total Candy: ${{ totalCarrito }}</strong>
+    </div>
+    <button class="btn-checkout">Continuar con Snacks</button>
+  </div>
+</div>
